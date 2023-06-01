@@ -1,0 +1,168 @@
+.hero {
+  position: relative;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.hero .text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 50vw;
+  padding-left: 7vw;
+}
+
+.hero .text-container span {
+  font-weight: 500;
+  color: var(--orange);
+}
+
+.hero .text-container h2 {
+  width: 40vw;
+  font-size: 40px;
+  font-weight: 300;
+  transform: translateY(100%);
+}
+
+.hero .text-container .line-container {
+  overflow: hidden;
+}
+
+.hero .text-container .line1 {
+  animation: slidein 0.7s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.hero .text-container .line2 {
+  animation: slidein 0.7s ease forwards;
+  animation-delay: 0.7s;
+}
+
+.hero .text-container .line3 {
+  animation: slidein 0.7s ease forwards;
+  animation-delay: 0.9s;
+}
+
+.hero .text-container p {
+  margin-top: 30px;
+  font-weight: 200;
+  width: 42vw;
+  opacity: 0;
+  animation: fadein 1.5s ease forwards;
+  animation-delay: 0.9s;
+}
+
+.hero .text-container .joke {
+  animation: fadein 1.5s ease forwards;
+}
+
+.hero .text-container .hero-sign-up {
+  position: relative;
+  margin-top: 50px;
+  border: 1px solid var(--orange);
+  border-radius: 1px;
+  padding: 20px 40px;
+  font-weight: 200;
+  font-size: 13px;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadein 1s ease forwards;
+  animation-delay: 1.5s;
+  overflow: hidden;
+}
+
+.hero .text-container .hero-sign-up::before {
+  background-color: var(--orange);
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -10;
+  transition: all 0.6s ease;
+}
+
+.hero .text-container .hero-sign-up::before {
+  width: 0;
+  height: 100%;
+}
+
+.hero .text-container .hero-sign-up:hover::before {
+  width: 105%;
+}
+
+.hero .image-container {
+  opacity: 0;
+  animation: fadein-image 1.5s ease forwards;
+  animation-delay: 1.5s;
+  z-index: -10;
+}
+
+.hero .image-container .hero-img1 {
+  width: 45vw;
+  opacity: 0.93;
+  margin: 20px;
+  filter: drop-shadow(0px 0px 5px var(--red));
+}
+
+.hero .circle {
+  position: absolute;
+  top: 120px;
+  border-radius: 50%;
+  width: 50vw;
+  height: 450px;
+  opacity: 0.4;
+  z-index: -5;
+  animation: fadein-circle 1s ease;
+}
+
+.hero .circle1 {
+  left: 0;
+  border-top: 4px solid var(--red);
+}
+
+.hero .circle2 {
+  right: 0;
+  border-bottom: 15px solid var(--red);
+}
+
+@keyframes fadein-circle {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.4;
+  }
+}
+
+@keyframes fadein-image {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slidein {
+  from {
+    transform: translateY(80%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,411 @@
+.overlay {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: all 0.4 ease;
+}
+
+.sign-in-portal,
+.sign-up-portal,
+.add-to-cart-portal,
+.cart-items-portal {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+  min-height: 400px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: var(--portal-radius);
+}
+
+.sign-up-portal .input-container .input-error-msg,
+.sign-in-portal .input-container .input-error-msg {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  width: 100%;
+  font-size: 12px;
+  color: var(--red);
+  border-radius: 30px;
+  pointer-events: none;
+}
+
+.sign-up-portal .error-msg,
+.sign-in-portal .error-msg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--red);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px 30px;
+  border-radius: 30px;
+  animation: sign-up-error-msg 3s ease forwards;
+}
+
+@keyframes sign-up-error-msg {
+  0% {
+    opacity: 0;
+  }
+  10%,
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.cart-items-portal {
+  background-color: rgba(255, 255, 255, 0.9);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 80%;
+  color: var(--black);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.cart-items-portal .failed-to-remove {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--red);
+  text-shadow: none;
+  animation: failed-to-remove-msg-fade-in-out 3s ease forwards;
+}
+
+@keyframes failed-to-remove-msg-fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  10%,
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.cart-items-portal h2 {
+  font-weight: 500;
+  font-size: 30px;
+}
+
+.cart-items-portal .purchase-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+}
+
+.cart-items-portal .purchase-container .items {
+  width: 70%;
+  max-height: 340px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), 0 0 30px rgba(0, 0, 0, 0.1);
+  overflow: scroll;
+}
+
+.cart-items-portal .purchase-container .items ul {
+  padding-top: 15px;
+}
+
+.cart-items-portal .purchase-container .items ul li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 80px;
+  border-bottom: 1px solid var(--gray);
+}
+
+.cart-items-portal .purchase-container .items ul li .price-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+}
+
+.cart-items-portal
+  .purchase-container
+  .items
+  ul
+  li
+  .price-container
+  .remove-btn {
+  background-color: none;
+  color: var(--red);
+  border: none;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.cart-items-portal .purchase-container .items .total-container {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 80px;
+}
+
+.cart-items-portal
+  .purchase-container
+  .items
+  .total-container
+  .continue-shopping {
+  border: solid 1px var(--orange);
+  color: var(--orange);
+  border-radius: 2px;
+  text-shadow: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.cart-items-portal .purchase-container .items .total-container .total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.cart-items-portal .purchase-container .purchase {
+  width: 20%;
+  background-color: #fff;
+  border: 2px;
+}
+
+.cart-items-portal .purchase-container .purchase .radio-container {
+  padding: 10px 10px;
+  color: var(--black);
+}
+
+.cart-items-portal .purchase-container .purchase .purchase-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 10px 0;
+  margin: 10px 20px;
+  border-radius: 2px;
+  background-color: var(--red);
+  cursor: pointer;
+}
+
+.add-to-cart-portal {
+  min-height: 100px;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: max-content;
+  height: max-content;
+  padding: 50px 150px;
+}
+
+.add-to-cart-portal h3 {
+  color: var(--black);
+  font-weight: 500;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.add-to-cart-portal .name {
+  margin-bottom: 50px;
+}
+
+.add-to-cart-portal .btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-to-cart-portal .btn-container .price {
+  color: var(--red);
+  margin: 0 10px;
+}
+
+.add-to-cart-portal .btn-container button {
+  color: #fff;
+  background-color: var(--red);
+  border: none;
+  padding: 15px 40px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.add-to-cart-portal .btn-container button:hover {
+  opacity: 0.9;
+}
+
+.add-to-cart-portal .add-to-cart-please-sign-in {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--red);
+  animation: add-to-cart-msg-fade-in-out 3s ease forwards;
+}
+
+@keyframes add-to-cart-msg-fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  10%,
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-gray);
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: var(--portal-radius);
+  border-bottom-left-radius: var(--portal-radius);
+}
+
+.form-container .input-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: 10px 0;
+  overflow: hidden;
+  padding-top: 40px;
+}
+
+.form-container .input-container input {
+  border: none;
+  border-bottom: 1px solid var(--gray);
+  width: 100%;
+  font-size: 20px;
+  outline: none;
+  background: none;
+  color: white;
+}
+
+.form-container .input-container .underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background-color: var(--orange);
+  transform: translateX(-100%);
+  transition: all 0.5s ease;
+}
+
+.form-container .input-container .placeholder {
+  position: absolute;
+  bottom: 0px;
+  left: 2px;
+  color: var(--gray);
+  font-size: 20px;
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.form-container .input-container .placeholder-up {
+  transform: translateY(-24px);
+  font-size: 14px;
+  color: var(--orange);
+}
+
+.form-container .input-container input:focus + .underline {
+  transform: translateX(0);
+}
+
+#sign-in-btn,
+#sign-up-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: var(--orange) 1px solid;
+  color: var(--orange);
+  width: 70%;
+  height: 50px;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+.sign-in-logo,
+.sign-up-logo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--orange);
+  border-top-right-radius: var(--portal-radius);
+  border-bottom-right-radius: var(--portal-radius);
+}
+
+.sign-in-logo h2,
+.sign-up-logo h2 {
+  border-top: #fff solid 1px;
+  border-bottom: #fff solid 1px;
+  color: #fff;
+  font-size: 30px;
+  width: 150px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 40px;
+  font-family: 'Great Vibes', cursive;
+  filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.4));
+}
+
+.portal-exit {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  background-color: #fff;
+  border-radius: var(--portal-radius);
+  color: var(--orange);
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+#add-to-cart-portal-exit,
+#cart-items-portal-exit {
+  top: -14px;
+  right: -14px;
+  border-radius: 50%;
+  color: var(--black);
+}

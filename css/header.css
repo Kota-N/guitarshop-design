@@ -1,0 +1,133 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(43, 43, 43);
+  box-shadow: 0px 0px 7px rgb(22, 22, 22);
+}
+header .logo-container {
+  width: 50vw;
+}
+
+header .logo-container a {
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 10px;
+}
+
+header .logo-container #logo {
+  border-top: #fff solid 1px;
+  border-bottom: #fff solid 1px;
+  font-size: 30px;
+  width: 150px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 40px;
+  font-family: 'Great Vibes', cursive;
+  filter: drop-shadow(0 0 15px rgba(243, 149, 73, 0.4));
+}
+
+header nav {
+  width: 50vw;
+  right: 0;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+header nav ul li {
+  position: relative;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header nav ul li .sign-in-required-msg {
+  position: absolute;
+  bottom: -25%;
+  right: -50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+  width: 120px;
+  height: 25px;
+  font-size: 12px;
+  color: var(--red);
+  opacity: 0;
+  animation: msg-fade-in-out 3s ease forwards;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 10px;
+}
+
+header nav ul .nav-sign-in a {
+  border: 1px solid var(--orange);
+  padding: 8px 20px;
+}
+
+header nav ul .nav-sign-out a {
+  border: 1px solid var(--orange);
+  padding: 8px 20px;
+}
+
+header nav ul li a i {
+  font-size: 22px;
+}
+
+header nav ul li .underline {
+  position: absolute;
+  bottom: 0px;
+  width: 0px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--orange);
+  opacity: 0.5;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+header nav ul li a:hover + .underline {
+  width: 100%;
+}
+
+header nav ul li .cart-item-count {
+  position: absolute;
+  top: 0;
+  right: -2px;
+  width: 17px;
+  height: 17px;
+  background-color: var(--red);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+@keyframes msg-fade-in-out {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  10%,
+  60% {
+    opacity: 0.9;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}

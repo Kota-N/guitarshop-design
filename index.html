@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/hero-section.css" />
+    <link rel="stylesheet" href="css/portals.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+
+    <title>Guitar Shop</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <div id="logo"><a href="index.html">Guitar Shop</a></div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="text-container">
+        <div class="line-container">
+          <h2 class="line1">We don't sell guitars.</h2>
+        </div>
+        <div class="line-container">
+          <h2 class="line2">We sell <span>dreams</span>.</h2>
+        </div>
+        <div class="line-container">
+          <h2 class="line3">Ukuleles are awesome.</h2>
+        </div>
+
+        <p>
+          If you wish to buy a guitar, you're in the wrong place! This is just a
+          mock online guitar shop website. You can't buy a real guitar here.
+          Sorry!
+        </p>
+      </div>
+      <div class="image-container">
+        <img class="hero-img1" src="images/hero.png" alt="guitar player" />
+      </div>
+
+      <div class="circle circle1"></div>
+      <div class="circle circle2"></div>
+    </section>
+
+    <div class="overlay" id="cart-items-overlay"></div>
+
+    <div class="overlay" id="sign-in-overlay">
+      <div class="sign-in-portal">
+        <form class="form-container">
+          <div class="input-container">
+            <input type="email" autocomplete="off" />
+            <div class="underline"></div>
+            <div class="placeholder" id="email-placeholder">Email</div>
+            <p class="input-error-msg"></p>
+          </div>
+          <div class="input-container">
+            <input type="password" autocomplete="off" />
+            <div class="underline"></div>
+            <div class="placeholder" id="password-placeholder">Password</div>
+            <p class="input-error-msg"></p>
+          </div>
+          <div id="sign-in-btn">Sign In</div>
+        </form>
+        <div class="sign-in-logo"><h2>Guitar Shop</h2></div>
+        <div class="portal-exit" id="sign-in-portal-exit">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay" id="sign-up-overlay">
+      <div class="sign-up-portal">
+        <form class="form-container">
+          <div class="input-container">
+            <input type="email" autocomplete="off" />
+            <div class="underline"></div>
+            <div class="placeholder" id="email-placeholder-sign-up">Email</div>
+            <p class="input-error-msg"></p>
+          </div>
+          <div class="input-container">
+            <input type="password" autocomplete="off" />
+            <div class="underline"></div>
+            <div class="placeholder" id="password-placeholder-sign-up">
+              Password
+            </div>
+            <p class="input-error-msg"></p>
+          </div>
+          <div class="input-container">
+            <input type="password" autocomplete="off" />
+            <div class="underline"></div>
+            <div class="placeholder" id="confirm-placeholder">
+              Confirm Password
+            </div>
+            <p class="input-error-msg"></p>
+          </div>
+          <div id="sign-up-btn">Sign Up</div>
+        </form>
+        <div class="sign-up-logo"><h2>Guitar Shop</h2></div>
+        <div class="portal-exit" id="sign-up-portal-exit">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/forms.js"></script>
+    <script src="js/index/init.js"></script>
+  </body>
+</html>
